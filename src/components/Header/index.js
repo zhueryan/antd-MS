@@ -30,6 +30,12 @@ export default class Header extends React.Component {
                     weather:data.weather
                 })
             }
+        },
+        (err)=>{
+            this.setState({
+                dayPictureUrl:'',
+                weather:'未获取到天气信息'
+            })
         })
     }
     render() {

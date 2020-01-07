@@ -6,11 +6,16 @@ export default class Axios{
             JsonP(options.url,{
                 param:'callback'
             },function(err,response){
-                if(response.status == "success"){
-                    resolve(response)
+                if(response != undefined){
+                    if(response.status == "success"){
+                        resolve(response)
+                    }else{
+                        reject(response.message)
+                    }
                 }else{
-                    reject(response.message)
+                    reject('请求失败!')
                 }
+               
             })
         })
     }
