@@ -1,12 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
-import {Button,Input} from 'antd'
-import Admin from './admin'
 
-function App() {
-  return (
-   <Admin />
-  );
+class App extends React.Component{
+
+  render(){
+    return (
+      <div>
+        {this.props.children}
+      </div>
+      )
+  }
+  
 }
 
 export default App;

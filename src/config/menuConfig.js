@@ -5,11 +5,11 @@ const menuList = [
     },
     {
         title: 'UI',
-        key: '/ui',
+        key: 'admin/ui',
         children: [
             {
                 title: '按钮',
-                key: '/ui/buttons',
+                key: '/admin/ui/buttons',
             },
             {
                 title: '弹框',
