@@ -9,8 +9,10 @@ import Loadings from './pages/ui/loadings'
 import Notice from './pages/ui/notice'
 import Messages from './pages/ui/messages'
 import Tabs from './pages/ui/tabs'
+import Gallery from './pages/ui/gallery'
 import Login from './pages/login'
 import Home from './pages/home'
+import Carousel  from './pages/ui/carousel'
 
 export default class IRoute extends React.Component {
 
@@ -41,6 +43,8 @@ export default class IRoute extends React.Component {
                                     <Route path="/admin/ui/notification" component={Notice} />
                                     <Route path="/admin/ui/messages" component={Messages} />
                                     <Route path="/admin/ui/tabs" component={Tabs} />
+                                    <Route path="/admin/ui/gallery" component={Gallery} />
+                                    <Route path="/admin/ui/carousel" component={Carousel} />
                                     <Route component={NoMatch} />
                                 </Switch>
                                 
