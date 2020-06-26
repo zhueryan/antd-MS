@@ -73,7 +73,7 @@ export default class BasicTable extends React.Component {
                 // isShowLoading:false
             }
         }).then((res) => {
-            if (res.code == 0) {
+            if (res.code == '0') {
                 res.result.list.map((item, index) => item.key = index)
                 this.setState({
                     dataSource2: res.result.list,

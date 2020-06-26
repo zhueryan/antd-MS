@@ -73,9 +73,9 @@ class Register extends React.Component {
                 }
             }
         }
-        const tailLayout = {
-            wrapperCol: { offset: 8, span: 16 },
-          };
+        // const tailLayout = {
+        //     wrapperCol: { offset: 8, span: 16 },
+        //   };
         return (
             <div>
                 <Card title="注册表单">
@@ -218,7 +218,7 @@ class Register extends React.Component {
                                     action="//www.mocky.io/v2/5cc8019d300000980a055e76"
                                     onChange={this.handleChange}
                                     >
-                                        {this.state.userImg?<img src={this.state.userImg}/>:<Icon type="plus" />}
+                                        {this.state.userImg?<img alt="" src={this.state.userImg}/>:<Icon type="plus" />}
                                     </Upload>
                                 )
                             }
@@ -226,7 +226,7 @@ class Register extends React.Component {
                         <FormItem {...offsetLayout} >
                             {
                                 getFieldDecorator('userImg')(
-                                    <Checkbox>我已阅读过<a href="#">用户协议</a></Checkbox>
+                                    <Checkbox>我已阅读过<a href="/#">用户协议</a></Checkbox>
                                 )
                             }
                         </FormItem>

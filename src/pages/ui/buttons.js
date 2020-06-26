@@ -42,7 +42,7 @@ export default class Buttons extends React.Component {
                 </Card>
                 <Card title="Loading按钮" className="card-wrap">
                     <Button loading={this.state.loading} type="primary">确定</Button>
-                    <Button type="circle" loading={this.state.loading} type="primary"></Button>
+                    <Button loading={this.state.loading} type="primary circle"></Button>
                     <Button type="circle" loading={this.state.loading}></Button>
                     <Button loading={this.state.loading} onClick={this.handelOpenLoading} >点击加载</Button>
                     <Button type="primary" onClick={this.handelCloseLoading}>取消加载</Button>

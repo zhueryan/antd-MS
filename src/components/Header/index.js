@@ -44,7 +44,7 @@ export default class Header extends React.Component {
                 <Row className="header-top">
                     <Col spam={24}>
                         <span>欢迎,{this.state.usersName}</span>
-                        <a href="#">退出</a>
+                        <a href="/#">退出</a>
                     </Col>
                 </Row>
                 <Row className="breadcrumb">
@@ -54,7 +54,7 @@ export default class Header extends React.Component {
                     <Col span={20} className="weather">
                         <span className="date">{this.state.sysTime}</span>
                         <span className="weather-img">
-                            <img src={this.state.dayPictureUrl}/>
+                            <img alt="" src={this.state.dayPictureUrl}/>
                         </span>
                         <span className="weather-detail">{this.state.weather}</span>
 

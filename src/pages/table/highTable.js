@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, Table, Modal, Button, message, Badge } from 'antd'
 import axios from './../../axios'
-import Utils from '../../utils/utils'
 
 export default class HighTable extends React.Component {
     state = {
@@ -15,7 +14,6 @@ export default class HighTable extends React.Component {
     }
     // 动态获取mock数据
     request = () => {
-        let _this = this;
         axios.ajax({
             url: '/table/high/list',
             data: {
@@ -40,7 +38,7 @@ export default class HighTable extends React.Component {
     }
     // 删除操作
     handleDelete = (item)=>{
-        let id =item.id
+        // let id =item.id
         Modal.confirm({
             title:'确认',
             content:`您确定要删除此条数据吗?`,

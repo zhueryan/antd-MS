@@ -17,6 +17,8 @@ import FormLogin from './pages/form/login'
 import Register from './pages/form/register'
 import BasicTable from './pages/table/basicTable'
 import HightTable from './pages/table/highTable'
+import City from './pages/city/index'
+
 export default class IRoute extends React.Component {
 
     render() {
@@ -52,7 +54,7 @@ export default class IRoute extends React.Component {
                                     <Route path="/admin/form/reg" component={Register} />
                                     <Route path="/admin/table/basic" component={BasicTable} />
                                     <Route path="/admin/table/high" component={HightTable} />
-                                    
+                                    <Route path="/admin/city" component={City} />
                                     <Route component={NoMatch} />
                                 </Switch>
                                 
