@@ -54,27 +54,7 @@ export default class Order extends React.Component {
     }
     requestList = () => {
         let _this = this;
-        axios.ajax({
-            url: '/order/list',
-            data: {
-                params: this.params
-            }
-        }).then((res) => {
-            console.log(res)
-            if (res.code == '0') {
-                let list = res.result.item_list.map((item, index) => {
-                    item.key = index
-                    return item;
-                })
-                this.setState({
-                    list,
-                    pagination: Utils.pagination(res, (current) => {
-                        _this.params.page = current
-                        _this.requestList()
-                    })
-                })
-            }
-        })
+        axios.requestList(this,'/order/list',this.params,true)
     }
     onRowClick = (record, index) => {
         let selectKey = [index]
