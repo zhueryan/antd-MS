@@ -133,7 +133,7 @@ export default class Order extends React.Component {
                         pagination={this.state.pagination}
                         selectedIds = {this.state.selectedIds}
                         selectedItem = {this.state.selectedItem}
-                        rowSelection = "checkbox"
+                        // rowSelection = "checkbox"
                     />
                 </div>
             </div>
