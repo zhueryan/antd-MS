@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter, Route,Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import App from './App'
 import Admin from './admin'
 import NoMatch from './pages/nomatch'
@@ -12,12 +12,15 @@ import Tabs from './pages/ui/tabs'
 import Gallery from './pages/ui/gallery'
 import Login from './pages/login'
 import Home from './pages/home'
-import Carousel  from './pages/ui/carousel'
+import Carousel from './pages/ui/carousel'
 import FormLogin from './pages/form/login'
 import Register from './pages/form/register'
 import BasicTable from './pages/table/basicTable'
 import HightTable from './pages/table/highTable'
 import City from './pages/city/index'
+import Order from './pages/order/index'
+import Common from './common'
+import OrderDetail from './pages/order/detail'
 
 export default class IRoute extends React.Component {
 
@@ -55,13 +58,23 @@ export default class IRoute extends React.Component {
                                     <Route path="/admin/table/basic" component={BasicTable} />
                                     <Route path="/admin/table/high" component={HightTable} />
                                     <Route path="/admin/city" component={City} />
+                                    <Route path="/admin/order" component={Order} />
                                     <Route component={NoMatch} />
                                 </Switch>
-                                
+
                             </Admin>
                     }>
                     </Route>
-                    <Route path="/order/detail" component={Login} />
+                    <Route path="/common" render={
+                        () => 
+                            <Common>
+                                <Switch>
+                                    <Route path="/common/order/detail/:orderId" component={OrderDetail} />
+                                </Switch>
+                            </Common>
+                        }>
+
+                    </Route>
                 </App>
             </HashRouter>
         )

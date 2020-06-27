@@ -2,7 +2,6 @@ import React from 'react'
 import { Card, Table, Button, Form, Select, Modal, message } from 'antd'
 import axios from './../../axios'
 import Utils from '../../utils/utils'
-import '../../style/common.less'
 const FormItem = Form.Item
 const Option = Select.Option
 export default class City extends React.Component {
