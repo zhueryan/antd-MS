@@ -3,6 +3,7 @@ import { Card, Table, Button, Form, Select, Modal, message, DatePicker } from 'a
 import axios from './../../axios'
 import Utils from '../../utils/utils'
 import BaseForm from '../../components/BaseForm/index'
+import ETable from '../../components/ETable'
 const FormItem = Form.Item
 const Option = Select.Option
 export default class Order extends React.Component {
@@ -55,13 +56,6 @@ export default class Order extends React.Component {
     requestList = () => {
         let _this = this;
         axios.requestList(this,'/order/list',this.params,true)
-    }
-    onRowClick = (record, index) => {
-        let selectKey = [index]
-        this.setState({
-            selectedRowKeys: selectKey,
-            selectedItem: record
-        })
     }
     openOrderDetail = ()=>{
         let item = this.state.selectedItem;
@@ -121,11 +115,6 @@ export default class Order extends React.Component {
                 dataIndex: 'user_pay'
             },
         ]
-        const { selectedRowKeys } = this.state;
-        const rowSelection = {
-            type: 'radio',
-            selectedRowKeys
-        }
         return (
             <div>
                 <Card>
@@ -136,82 +125,18 @@ export default class Order extends React.Component {
                     <Button type="primary">结束订单</Button>
                 </Card>
                 <div className="content-wrap">
-                    <Table
-                        bordered
+                    <ETable 
+                        updateSelectedItem = {Utils.updateSelectedItem.bind(this)}
                         columns={columns}
-                        rowSelection={rowSelection}
                         dataSource={this.state.list}
+                        selectedRowKeys = {this.state.selectedRowKeys}
                         pagination={this.state.pagination}
-                        onRow={(record, index) => {
-                            return {
-                                onClick: () => {
-                                    this.onRowClick(record, index);
-                                }, // 点击行                             
-                            };
-                        }}
+                        selectedIds = {this.state.selectedIds}
+                        selectedItem = {this.state.selectedItem}
+                        rowSelection = "checkbox"
                     />
                 </div>
             </div>
         )
     }
 }
-
-class FilterForm extends React.Component {
-    render() {
-        const { getFieldDecorator } = this.props.form
-        return (
-            <Form layout="inline">
-                <FormItem label="城市">
-                    {
-                        getFieldDecorator("city_id")(
-                            <Select placeholder="全部" style={{ width: 80 }}>
-                                <Option value="1=">全部</Option>
-                                <Option value="1">北京市</Option>
-                                <Option value="2">天津市</Option>
-                                <Option value="3">深圳市</Option>
-                            </Select>
-                        )
-                    }
-                </FormItem>
-                <FormItem label="订单时间">
-                    {
-                        getFieldDecorator("start_time")(
-                            <DatePicker
-                                placeholder="选择开始时间"
-                                showTime
-                                format="YYYY-MM-DD HH:mm:ss"
-                            />
-                        )
-                    }
-                </FormItem>
-                <FormItem>
-                    {
-                        getFieldDecorator("end_time")(
-                            <DatePicker
-                                placeholder="选择结束时间"
-                                showTime
-                                format="YYYY-MM-DD HH:mm:ss"
-                            />
-                        )
-                    }
-                </FormItem>
-                <FormItem label="订单状态">
-                    {
-                        getFieldDecorator("order_status")(
-                            <Select placeholder="全部" style={{ width: 120 }}>
-                                <Option value="">全部</Option>
-                                <Option value="1">进行中</Option>
-                                <Option value="2">结束行程</Option>
-                            </Select>
-                        )
-                    }
-                </FormItem>
-                <FormItem>
-                    <Button type="primary" style={{ margin: '0 20px' }}>查询</Button>
-                    <Button>重置</Button>
-                </FormItem>
-            </Form>
-        )
-    }
-}
-FilterForm = Form.create({})(FilterForm)
