@@ -4,8 +4,7 @@ import axios from './../../axios'
 import Utils from '../../utils/utils'
 import BaseForm from '../../components/BaseForm/index'
 import ETable from '../../components/ETable'
-const FormItem = Form.Item
-const Option = Select.Option
+
 export default class Order extends React.Component {
     state = {}
     params = {
