@@ -140,13 +140,6 @@ export default class BasicTable extends React.Component {
                 dataIndex: 'userName'
             },
             {
-                title: '性别',
-                dataIndex: 'sex',
-                render(sex) {
-                    return sex == 1 ? "男" : '女'
-                }
-            },
-            {
                 title: '状态',
                 dataIndex: 'state',
                 render(state) {
@@ -158,6 +151,13 @@ export default class BasicTable extends React.Component {
                         '5': '创业者'
                     }
                     return config[state];
+                }
+            },
+            {
+                title: '性别',
+                dataIndex: 'sex',
+                render(sex) {
+                    return sex == 1 ? "男" : '女'
                 }
             },
             {
