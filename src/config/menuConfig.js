@@ -105,7 +105,7 @@ const menuList = [
         children: [
             {
                 title: '柱形图',
-                key: '/charts/bar'
+                key: '/admin/charts/bar'
             },
             {
                 title: '饼图',
