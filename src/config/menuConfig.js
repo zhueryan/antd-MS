@@ -109,11 +109,11 @@ const menuList = [
             },
             {
                 title: '饼图',
-                key: '/charts/pie'
+                key: '/admin/charts/pie'
             },
             {
                 title: '折线图',
-                key: '/charts/line'
+                key: '/admin/charts/line'
             },
         ]
     },

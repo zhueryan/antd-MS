@@ -24,6 +24,7 @@ import OrderDetail from './pages/order/detail'
 import User from './pages/user'
 import BikeMap from './pages/map/bikeMap'
 import Bar from './pages/echarts/bar'
+import Pie from './pages/echarts/pie'
 export default class IRoute extends React.Component {
 
     render() {
@@ -64,6 +65,7 @@ export default class IRoute extends React.Component {
                                     <Route path="/admin/user" component={User} />
                                     <Route path="/admin/bikeMap" component={BikeMap} />
                                     <Route path="/admin/charts/bar" component={Bar} />
+                                    <Route path="/admin/charts/pie" component={Pie} />
                                     <Route component={NoMatch} />
                                 </Switch>
 
